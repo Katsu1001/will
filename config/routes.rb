@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'images/index'
+  get 'users/index'
+  get 'training_records/index'
   devise_for :users
   get 'toppages/index'
   root to:"toppages#index"

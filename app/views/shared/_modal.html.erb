@@ -1,0 +1,27 @@
+<div class="overlay"></div>
+<div class="body_modal">
+  <div class="body_modal__inner">
+    編集ボタン
+    <% unless @userbody == nil %>
+      <div class="hide" id="edit_body">
+        <%= render partial: "shared/user_body_edit" %>
+      </div>
+    <% end %>
+    投稿削除ボタン
+    <div class="hide" id="delete_image">
+      <%= render partial: "shared/delete_image" %>
+    </div>
+    投稿コメント編集ボタン
+    <div class="card hide" id="html_to_modal_box"></div>
+    <% unless @follows == nil || @followers == nil %>
+      フォロー表示ボタン
+      <div class="hide" id="show_follows">
+        <%= render partial: "shared/show_follows" %>
+      </div>
+      フォロー表示ボタン
+      <div class="hide" id="show_followers">
+        <%= render partial: "shared/show_followers" %>
+      </div>
+    <% end %>
+  </div>
+</div>

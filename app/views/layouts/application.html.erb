@@ -6,10 +6,144 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" rel="stylesheet" type="text/css">
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" type="text/javascript"></script>
   </head>
 
-  <body>
+  <body class="h-100 d-flex flex-column" style="min-height: 100vh">
+    <div class="head_blank"></div>
+      <%= render 'layouts/notifications' %>
+      <%= render partial: "shared/modal" %>
+    </div>
+    <div class="navbar navbar-dark bg-secondary fixed-top">
+      <div class="navbar-brand_top">
+        <%= link_to root_path do %>
+          <%= image_tag asset_path("Rep_logo"), size:"80x40" %>
+        <% end %>
+      </div>
+    </div>
+
+    <% if user_signed_in? %>
+      <ul class="navbar navbar-nav navbar-expand">
+        コラム
+        <li class="nav-item nav-link">
+          <%= link_to column_toppages_path, class: 'text-white mr-4' do %>
+            <i class="fas fa-lg fas fa-book-open"></i>
+          <% end %>
+        </li>
+        プロテイン
+        <li class="nav-item nav-link">
+          <%= link_to protein_toppages_path, class: 'text-white mr-4' do %>
+            <i class="fas fa-lg fas fa-prescription-bottle"></i>
+          <% end %>
+        </li>
+        検索
+        <li class="nav-item nav-link">
+          <%= link_to users_path, class: 'text-white mr-4' do %>
+            <i class="fas fa-lg fa-search"></i>
+          <% end %>
+        </li>
+        写真
+        <li class="nav-item nav-link">
+          <%= link_to user_images_path(current_user.id), class: 'text-white mr-4' do %>
+            <i class="fas fa-lg fas fa-camera"></i>
+          <% end %>
+        </li>
+        カレンダー
+        <li class="nav-item nav-link">
+          <%= link_to user_path(current_user.id), class: 'text-white mr-4' do %>
+            <i class="far fa-lg fa-calendar-alt"></i>
+          <% end %>
+        </li>
+        分析
+        <li class="nav-item nav-link chart_link_nav">
+          <%= link_to user_training_records_path(current_user.id), class: 'text-white mr-4' do %>
+            <i class="fas fa-lg fa-chart-line"></i>
+          <% end %>
+        </li>
+        ログアウト
+        <li class="nav-item nav-link">
+          <%= link_to destroy_user_session_path, method: :delete, class: 'text-white mr-1 10px btn btn-danger' do %>
+            Log Out
+          <% end %>
+        </li>
+      </ul>
+    <% else %>
+      <ul class="navbar navbar-nav navbar-expand">
+          <li class="nav-item nav-link">
+            <%= form_with model: User.new, scope: :user, url: session_path(:user), local: true do |f| %>
+              <%= f.hidden_field :email, value: 'arnold@com' %>
+              <%= f.hidden_field :password, value: '123456' %>
+              <%= f.submit 'Test Log In', class: 'btn btn-info mr-3' %>
+            <% end %>
+          </li>
+        </ul>
+        コラム
+        <li class="nav-item nav-link">
+          <%= link_to column_toppages_path, class: 'text-white mr-4' do %>
+            <i class="fas fa-lg fas fa-book-open"></i>
+          <% end %>
+        </li>
+        プロテイン
+        <li class="nav-item nav-link">
+          <%= link_to protein_toppages_path, class: 'text-white mr-4' do %>
+            <i class="fas fa-lg fas fa-prescription-bottle"></i>
+          <% end %>
+        </li>
+        <li class="nav-item nav-link">
+          <%= link_to new_user_registration_path, class: 'text-white mr-4' do %>
+             Sign Up
+          <% end %>
+        </li>
+        <li class="nav-item nav-link">
+          <%= link_to new_user_session_path, class: 'text-white mr-1' do %>
+            Log In
+          <% end %>
+        </li>
+      </ul>
+    <% end %>
+
     <%= yield %>
+    <div class="nav-box bg-secondary width-100">
+      <div class="navbar navbar-dark bg-secondary mt-auto py-2">
+        <div class="navbar-brand below_tab">
+          <%= link_to root_path do %>
+            <%= image_tag asset_path("Rep_logo"), size:"80x40" %>
+          <% end %>
+        </div>
+        <ul class="row policy">
+          <li class="nav-item nav-link inline-block">
+            <%= link_to root_path, class: 'text-white mr-5 18px' do %>
+              トップページ
+            <% end %>
+          </li>
+          <li class="nav-item nav-link inline-block">
+            <%= link_to regulation_toppages_path, class: 'text-white mr-5 18px' do %>
+              利用規約
+            <% end %>
+          </li>
+          <li class="nav-item nav-link inline-block">
+            <%= link_to privacy_policy_toppages_path , class: 'text-white mr-3 18px' do %>
+              プライバシーポリシー
+            <% end %>
+          </li>
+          <li class="nav-item nav-link inline-block">
+            <%= link_to contact_us_toppages_path , class: 'text-white mr-3 18px' do %>
+              お問い合わせ
+            <% end %>
+          </li>
+          <li class="nav-item nav-link inline-block">
+            <%= link_to administrator_info_toppages_path , class: 'text-white mr-3 18px' do %>
+              管理者情報
+            <% end %>
+          </li>
+        </ul>
+      </div>
+      <div class="text-white text-center mb-3 mt-2">
+        <p>© 2022 Will</p>
+      </div>
+    </div>
   </body>
 </html>
+

@@ -1,0 +1,15 @@
+<% if @user.id == current_user.id %>
+  <div class="btn btn-primary my-6 show_modal text-center" value="#edit_body">
+    編集
+  </div>
+<% else %>
+  <% if current_user.following?(user) %>
+    <%= form_with model: current_user.relationships.find_by(follow_id: user.id), method: :delete do |f| %>
+      <%= f.hidden_field :follow_id, value: user.id %>
+      <%= f.submit "フォロー中", class: 'mt-3 follow_now_btn' %>
+  <% else %>
+    <%= form_with model: current_user.relationships.build do |f| %>
+    <%= f.hidden_field :follow_id, value: user.id %>
+    <%= f.submit "フォローする", class: 'mt-3 follow_now_btn' %>
+  <% end %>
+<% end %>

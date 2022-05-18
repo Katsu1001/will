@@ -1,0 +1,32 @@
+<%# follows_result.card.background_color_light_black %>
+  <div class="follow_title">
+    <hr/>
+    <p>フォロ中ー</p>
+    <hr/>
+
+    <div class="scroll background_color_white">
+      <% @follows.each do |person| %>
+        <%= link_to user_path(person.id), class: 'close_button' do %>
+          <div class="user_searched">
+            <div class="avatar_searched">
+              <%= image_tag "#{person.user_body.avatar.url}" %>
+            </div>
+            <div class="user_detail_searched">
+              <div class="name">#{person.nickname}</div>
+                <div class="body">#{person.user_body.height}cm/#{person.user_body.weight}kg</div>
+                  <div class="experience">
+                    <%= "#{((Date.today.year - person.user_body.experience.year)*12 + Date.today.month - person.user_body.experience.month) / 12 + 1} " %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr/>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="action m-5 row justify-content-around">
+    <i class="fas fa-3x fa-times-circle close_button cursor_pointer d-inline-flex cancel_btn" value="#show_follows"></i>
+  </div>
+

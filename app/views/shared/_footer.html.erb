@@ -1,0 +1,45 @@
+<%# 下部広告部分 %>
+<div class='ad-footer-contents'>
+  <p class='ad-footer-explain'>
+    今何かを変えることでこの先に広がる何かを変える
+  </p>
+  <h2 class='ad-footer-title'>
+    今すぐ無料ダウンロード！
+  </h2>
+  <div class='store-btn'>
+    <%= link_to image_tag("app-store.svg", class:"apple-btn"), "#" %>
+    <%= link_to image_tag("google-play.png", class:"google-btn"), "#" %>
+  </div>
+</div>
+<%# /下部広告部分 %>
+
+<div class='footer'>
+  <div class='footer-contents'>
+    <div class='furima-details'>
+      <h2 class='footer-content-head'>Willについて</h2>
+      <ul>
+        <li><%= link_to '会社概要（運営会社)', "#", class: "footer-link" %></li>
+        <li><%= link_to 'プライバシーポリシー', privacy_policy_toppages_path, class: "footer-link" %></li>
+        <li><%= link_to 'Will利用規約', regulation_toppages_path, class: "footer-link" %></li>
+        <li><%= link_to 'ポイントに関する特約', "#", class: "footer-link" %></li>
+      </ul>
+    </div>
+    <div class='furima-details'>
+      <h2 class='footer-content-head'>Willを見る</h2>
+      <ul>
+        <li><%= link_to 'お問い合わせ', contact_us_toppages_path, class: "footer-link" %></li>
+        <li><%= link_to '管理者情報', administrator_info_toppages_path, class: "footer-link" %></li>
+      </ul>
+    </div>
+    <div class='furima-details'>
+      <h2 class='footer-content-head'>Willについて</h2>
+      <ul>
+        <li><%= link_to 'Willガイド', "#", class: "footer-link" %></li>
+        <li><%= link_to 'Willロゴ利用ガイドライン', "#", class: "footer-link" %></li>
+        <li><%= link_to 'お知らせ', "#", class: "footer-link" %></li>
+      </ul>
+    </div>
+  </div>
+  <%= link_to image_tag("https://i.gyazo.com/eb562d43e879e43146695908734c49a9.png", class:"logo-white"), "#" %>
+  <p>© 2022 Will</p>
+</div>

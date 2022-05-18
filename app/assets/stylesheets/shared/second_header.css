@@ -1,0 +1,56 @@
+/* スマホ用のcssを記述------------------------------------------- */
+@media screen and (max-width:479px) {
+
+.second-header {
+  width: 100%;
+  min-width: 800px;
+  height: 130px;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.second-logo {
+  width: 100px;
+  height: 100px;
+}
+}
+
+/* tablet用のcssを記述------------------------------------------------ */
+@media only screen and (min-width:480px) and (max-width:950px) {
+
+.second-header {
+  width: 100%;
+  min-width: 800px;
+  height: 130px;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+  
+.second-logo {
+  width: 100px;
+  height: 100px;
+}
+}
+
+/* pc用のcssを記述---------------------------------------------- */
+@media screen and (min-width:951px) {
+
+.second-header {
+  width: 100%;
+  min-width: 800px;
+  height: 130px;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+  
+.second-logo {
+  width: 100px;
+  height: 100px;
+}
+}

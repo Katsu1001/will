@@ -1,21 +1,29 @@
+<%= render "shared/header" %>
+
+<div class='main'>
+  <div class='title-contents'>
+    <h2 class='service-title'>
+      Will
+    </h2>
+    <p class='service-explain'>
+      About Our Service
+    </p>
+    <p class='service-explain'>
+      Willはトレーニングを愛する全ての人のライフスタイルを総合的にサポートするメディアです。<br>
+      男性でも女性でも、初心者でも上級者でもお楽しみ頂けるコンテンツをお届け致します。
+    </p>
+    <div class='store-btn'>
+      <%= link_to image_tag("app-store.svg", class:"apple-btn"), "#" %>
+      <%= link_to image_tag("google-play.png", class:"google-btn"), "#" %>
+    </div>
+  </div>
+
 <ul class="slider">
   <li>
-    <%= image_tag asset_path("toppage_beginners") %>
-  </li>
-  <li>
-    <%= image_tag asset_path("karate-1343889__480") %>
+    <%= image_tag asset_path("https://i.gyazo.com/d9cb8e825ddc7a02560900f1f84c2b61.png") %>
   </li>
 </ul>
 <div class="toppage_headline"></div>
-
-  <div class="title-head text-center my-4">
-    <div class="about_service">
-      <p>About Our Service</p>
-      <div class="about_service_text">
-        <p class="text">今何かを変えることでこの先に広がる何かを変える</p>
-      </div>
-    </div>
-  </div>
   <div class="service_guide">
     <%= link_to column_toppages_path do %> 
       <div class="introduction">
@@ -67,3 +75,4 @@
     <% end %>
   </div>
 </div>
+<%= render "shared/footer" %>

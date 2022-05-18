@@ -1,0 +1,24 @@
+<% unless @people.nil? %>
+  <% @people.each do |people| %>
+    <% unless [people.user_body.height,people.user_body.weight,people.user_body.experience].include?(nil) %>
+      <%= link_to user_path(people.id) do %>
+        <div class="user_searched">
+          <div class="avatar_searched">
+            <%= image_tag "#{people.user_body.avatar.url}" %>
+          </div>
+          <div class="user_detail_searched">
+            <div class="name">#{people.nickname}
+              <div class="body">#{people.user_body.height}cm/#{people.user_body.weight}kg</div>
+                <div class="experience">
+                  <%= "#{((Date.today.year - people.user_body.experience.year)*12 + Date.today.month - people.user_body.experience.month) / 12 + 1}年目" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr/>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end%>
+<%= link_to_next_page @people,'さらに表示', remote: true, class: 'btn btn-primary mb-3 block fontsize_12', id: 'search_next' %>

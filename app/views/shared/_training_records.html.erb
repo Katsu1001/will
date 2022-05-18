@@ -1,0 +1,35 @@
+<li class="list-unstyled">
+  <span class="remove_hidden_class">
+    <i class="fas fa-plus"></i>
+  </span>
+  <span class="add_hidden_class hidden">
+    <i class="fas fa-minus"></i>
+  </span>
+  <%= day_record.part %>
+  <%= day_record.exercise %>
+  <% if @user.id == current_user.id %>
+    <span class="ml-2 record_delete_btn" value="<%= day_record.id %>">
+      <i class="fas fa-times-circle cursor_pointer cancel_btn"></i>
+    </span>
+  <% end %>
+  <ul class="hidden">
+    <% day_record.menus.each do |menu| %>
+      <% if day_record.part =="有酸素"%>
+        <li class="menu-list">
+          <%= menu.time %>
+            分
+          <% end %>
+        </li>
+      <% else %>
+        <li class="menu-list">
+          <%= menu.weight %>
+            kg ×
+          <% end %>
+          <%= menu.rep %>
+            will
+          <% end %>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</li>

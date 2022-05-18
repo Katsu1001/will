@@ -1,0 +1,112 @@
+<div class="user_info">
+  <%= render partial: "shared/follow_btn", locals: { user: @user } %>
+  <div class="avatar mt-2">
+    <%= image_tag "#{@userbody.avatar}" %>
+  </div>
+  <div class="nickname">
+    <p>
+      <%= user.nickname %>
+    </p>
+    <div class="follow_follower">
+      <%# ここのvalueは表示するモーダルのid.モーダルの中でidが#show_follwsであるもののhideを取る。 %>
+      <div class="show_modal follow inline-block cursor_pointer" value="#show_follows">
+        <div class="follow__number">
+          <%= "#{@user.follows.length}" %>
+        </div>
+      </div>
+      <div class="follow__string">
+        <%= 'フォロー' %>
+      </div>
+      <div class="show_modal follow inline-block ml-2 cursor_pointer" value="#show_followers">
+        <div class="follow__number">
+          <%= "#{@user.followers.length}" %>
+        </div>
+        <div class="follow__string">
+          <%= "フォロワー" %>
+        </div>
+      </div>
+    </div>
+    <hr/>
+    <ul class="row justify-content-around userinfo_link_list">
+      <li>
+        <%= link_to user_images_path(@user.id), class: 'text-blue mr-4' do %>
+          <i class="fas fa-lg fas fa-camera"></i>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to user_path(@user.id), class: 'text-blue mr-4' do %>
+          <i class="far fa-lg fa-calendar-alt"></i>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to user_training_records_path(@user.id), class: 'text-blue mr-4 chart_link_info' do %>
+          <i class="fas fa-lg fa-chart-line"></i>
+        <% end %>
+      </li>
+    </ul>
+    <hr/>
+  </div>
+
+  <div class="body">
+    <div class="height">
+      <% if userbody&.height.nil? %>
+        <p class="ml-2">
+          <%= "--cm" %>
+        </p>
+      <% else %>
+        <p class="ml-2">
+          <%= "#{userbody&.height} cm" %>
+        </p>
+      <% end %>
+    </div>
+    <div class="weight ml-3">
+      <% if userbody&.weight.nil? %>
+        <p class="ml-2">
+          <%= "--kg" %>
+        </p>
+      <% else %>
+        <p class="ml-2">
+          <%= "#{userbody&.weight} kg" %>
+        </p>
+      <% end %>
+    </div>
+    <div class="mt-1">
+      <div class="userbody_title">BMI</div>
+        <% if userbody&.height.nil? || userbody&.weight.nil? %>
+          <p class="ml-2">
+            <%= "--" %>
+          </p>
+        <% else %>
+          <p class="ml-2">
+            <%= (userbody.weight.to_f / (userbody.height.to_f / 100) ** 2).round(1) %>
+          </p>
+        <% end %>
+      </div>
+    </div>
+    <div class="mt-1">
+      <div class="userbody_title">想定基礎代謝</div>
+      <% if [userbody&.height, userbody&.weight, userbody&.birth_year].include?(nil) %>
+        <p class="ml-2">
+          <%= '--kcal' %>
+        </p>
+      <% else %>
+        <p class="ml-2">
+          <%= "#{(66.47 + (13.75 * userbody.weight.to_f) + (5 * userbody.height.to_f) - (6.78*(2019 - userbody.birth_year))).round(0)} kcal" %>
+        </p>
+      <% end %>
+    </div>
+    <div class="mt-1">
+      <div class="userbody_title">筋トレ歴</div>
+      <% if userbody&.experience.nil? %>
+        <p class="ml-2">
+          <%= '--' %>
+        </p>
+      <% else %>
+        <p class="ml-2">
+          <%= "#{((Date.today.year - userbody.experience.year)*12 + Date.today.month - userbody.experience.month) / 12 + 1} 年目" %>
+        </p>
+      <% end %>
+    </div>
+    <hr/>
+  </div>
+</div>

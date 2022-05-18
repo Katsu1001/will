@@ -48,7 +48,7 @@
     background: #f8f8f8;
   }
   
-  /* 画面上部の「人生を変えるフリマアプリ」帯部分 */
+  /* 画面上部にあるWillのヘッダー帯部分 */
   .title-contents {
     width: 100vw;
     height: 130vh;
@@ -87,6 +87,130 @@
   .google-btn {
     height: 9vh;
   }
+  /* 画面上部にあるWillのヘッダー帯部分 */
+
+/* Willによって解決したい問題 */
+.feature-contents {
+  padding: 5vh 15vw;
+}
+
+.feature-contents>.title {
+  text-align: center;
+  font-size: 3.5vh;
+  font-weight: bold;
+  margin-bottom: 5vh;
+  position: relative;
+}
+
+.feature-contents>.title::after {
+  content: '';
+  width: 70px;
+  height: 4px;
+  background-color: #e29118;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.feature-lists {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.feature-lists>.list {
+  width: 33vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.feature-list-text {
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 50px;
+}
+
+.feature-list-description {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+/* //Willによって解決したい問題 */
+
+/* Willが選ばれる3つの理由部分 */
+.select-reason-contents {
+  padding: 5vh 15vw;
+}
+
+.select-reason-contents>.title {
+  text-align: center;
+  font-size: 3.5vh;
+  font-weight: bold;
+  margin-bottom: 5vh;
+  position: relative;
+}
+
+.select-reason-contents>.title::after {
+  content: '';
+  width: 70px;
+  height: 4px;
+  background-color: #e29118;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.reason-lists {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.reason-lists>.list {
+  width: 33vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.list-pict {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.reason-list-number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+  text-align: center;
+  line-height: 60px;
+  background-color: #e29118;
+  color: #fff;
+}
+
+.reason-list-text {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 50px;
+}
+
+.reason-list-blue-text {
+  color: #e29118;
+}
+
+.reason-list-description {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+/* //Willが選ばれる3つの理由部分 */
 
   .toppage_headline{
     padding: 0 5% 0 5%;
@@ -144,45 +268,169 @@
     background: #f8f8f8;
   }
   
-  /* 画面上部の「人生を変えるフリマアプリ」帯部分 */
-  .title-contents {
-    width: 100vw;
-    height: 130vh;
-    background-image: image-url("will.toppages.header.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top center;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 5vh 15vw;
-    color: #fff;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
-  }
-  
-  .service-title {
-    font-size: 8vh;
-  }
-  
-  .service-explain {
-    font-size: 2.5vh;
-    line-height: 40px;
-  }
-  
-  .store-btn {
-    display: flex;
-    margin-top: 24px;
-  }
-  
-  .apple-btn {
-    margin-right: 1vw;
-    height: 9vh;
-  }
-  
-  .google-btn {
-    height: 9vh;
-  }
+ /* 画面上部にあるWillのヘッダー帯部分 */
+ .title-contents {
+  width: 100vw;
+  height: 130vh;
+  background-image: image-url("will.toppages.header.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 5vh 15vw;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+}
+
+.service-title {
+  font-size: 8vh;
+}
+
+.service-explain {
+  font-size: 2.5vh;
+  line-height: 40px;
+}
+
+.store-btn {
+  display: flex;
+  margin-top: 24px;
+}
+
+.apple-btn {
+  margin-right: 1vw;
+  height: 9vh;
+}
+
+.google-btn {
+  height: 9vh;
+}
+/* 画面上部にあるWillのヘッダー帯部分 */
+
+/* Willによって解決したい問題 */
+.feature-contents {
+padding: 5vh 15vw;
+}
+
+.feature-contents>.title {
+text-align: center;
+font-size: 3.5vh;
+font-weight: bold;
+margin-bottom: 5vh;
+position: relative;
+}
+
+.feature-contents>.title::after {
+content: '';
+width: 70px;
+height: 4px;
+background-color: #e29118;
+position: absolute;
+bottom: -10px;
+left: 50%;
+transform: translateX(-50%);
+}
+
+.feature-lists {
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+}
+
+.feature-lists>.list {
+width: 33vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.feature-list-text {
+font-weight: bold;
+font-size: 22px;
+line-height: 50px;
+}
+
+.feature-list-description {
+font-size: 18px;
+margin-top: 20px;
+}
+
+/* //Willによって解決したい問題 */
+
+/* Willが選ばれる3つの理由部分 */
+.select-reason-contents {
+padding: 5vh 15vw;
+}
+
+.select-reason-contents>.title {
+text-align: center;
+font-size: 3.5vh;
+font-weight: bold;
+margin-bottom: 5vh;
+position: relative;
+}
+
+.select-reason-contents>.title::after {
+content: '';
+width: 70px;
+height: 4px;
+background-color: #e29118;
+position: absolute;
+bottom: -10px;
+left: 50%;
+transform: translateX(-50%);
+}
+
+.reason-lists {
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+}
+
+.reason-lists>.list {
+width: 33vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+position: relative;
+}
+
+.list-pict {
+margin-bottom: 20px;
+width: 100%;
+}
+
+.reason-list-number {
+position: absolute;
+top: 0;
+left: 0;
+width: 60px;
+height: 60px;
+font-size: 30px;
+text-align: center;
+line-height: 60px;
+background-color: #e29118;
+color: #fff;
+}
+
+.reason-list-text {
+font-weight: bold;
+font-size: 24px;
+line-height: 50px;
+}
+
+.reason-list-blue-text {
+color: #e29118;
+}
+
+.reason-list-description {
+font-size: 18px;
+margin-top: 20px;
+}
+
+/* //Willが選ばれる3つの理由部分 */
 
   .toppage_headline{
     padding: 0 5% 0 5%;
@@ -240,45 +488,171 @@
     background: #f8f8f8;
   }
   
-  /* 画面上部の「人生を変えるフリマアプリ」帯部分 */
-  .title-contents {
-    width: 100vw;
-    height: 130vh;
-    background-image: image-url("will.toppages.header.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top center;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 5vh 15vw;
-    color: #fff;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
-  }
-  
-  .service-title {
-    font-size: 8vh;
-  }
-  
-  .service-explain {
-    font-size: 2.5vh;
-    line-height: 40px;
-  }
-  
-  .store-btn {
-    display: flex;
-    margin-top: 24px;
-  }
-  
-  .apple-btn {
-    margin-right: 1vw;
-    height: 9vh;
-  }
-  
-  .google-btn {
-    height: 9vh;
-  }
+ /* 画面上部にあるWillのヘッダー帯部分 */
+ .title-contents {
+  width: 100vw;
+  height: 130vh;
+  background-image: image-url("will.toppages.header.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 5vh 15vw;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+}
+
+.service-title {
+  font-size: 8vh;
+}
+
+.service-explain {
+  font-size: 2.5vh;
+  line-height: 40px;
+}
+
+.store-btn {
+  display: flex;
+  margin-top: 24px;
+}
+
+.apple-btn {
+  margin-right: 1vw;
+  height: 9vh;
+}
+
+.google-btn {
+  height: 9vh;
+}
+/* 画面上部にあるWillのヘッダー帯部分 */
+
+/* Willによって解決したい問題 */
+.feature-contents {
+padding: 5vh 15vw;
+}
+
+.feature-contents>.title {
+text-align: center;
+font-size: 3.5vh;
+font-weight: bold;
+margin-bottom: 5vh;
+position: relative;
+}
+
+.feature-contents>.title::after {
+content: '';
+width: 70px;
+height: 4px;
+background-color: #e29118;
+position: absolute;
+bottom: -10px;
+left: 50%;
+transform: translateX(-50%);
+}
+
+.feature-lists {
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+}
+
+.feature-lists>.list {
+width: 33vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.feature-list-text {
+font-weight: bold;
+font-size: 22px;
+line-height: 50px;
+}
+
+.feature-list-description {
+font-size: 18px;
+margin-top: 20px;
+}
+
+/* //Willによって解決したい問題 */
+
+/* Willが選ばれる3つの理由部分 */
+.select-reason-contents {
+padding: 5vh 15vw;
+}
+
+.select-reason-contents>.title {
+text-align: center;
+font-size: 3.5vh;
+font-weight: bold;
+margin-bottom: 5vh;
+position: relative;
+}
+
+.select-reason-contents>.title::after {
+content: '';
+width: 70px;
+height: 4px;
+background-color: #e29118;
+position: absolute;
+bottom: -10px;
+left: 50%;
+transform: translateX(-50%);
+}
+
+.reason-lists {
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+}
+
+.reason-lists>.list {
+width: 33vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+position: relative;
+}
+
+.list-pict {
+margin-bottom: 20px;
+width: 100%;
+height: 45vh;
+}
+
+.reason-list-number {
+position: absolute;
+top: 0;
+left: 0;
+width: 60px;
+height: 60px;
+font-size: 30px;
+text-align: center;
+line-height: 60px;
+background-color: #e29118;
+color: #fff;
+}
+
+.reason-list-text {
+font-weight: bold;
+font-size: 24px;
+line-height: 50px;
+}
+
+.reason-list-blue-text {
+color: #e29118;
+}
+
+.reason-list-description {
+font-size: 18px;
+margin-top: 20px;
+}
+
+/* //Willが選ばれる3つの理由部分 */
+
   
   .toppage_headline{
     padding: 0 8% 0 8%;

@@ -18,11 +18,43 @@
     </div>
   </div>
 
-<ul class="slider">
-  <li>
-    <%= image_tag asset_path("https://i.gyazo.com/d9cb8e825ddc7a02560900f1f84c2b61.png") %>
-  </li>
-</ul>
+  <div class='feature-contents'>
+    <h2 class='title'>
+      Willによって解決したい問題
+    </h2>
+    <ul class='feature-lists'>
+      <li class='list'>
+        <%= image_tag "outcome.png", class:"list-pict" %>
+        <h3 class='feature-list-text'>
+          成果が出ない...
+        </h3>
+        <p class='feature-list-description'>
+          自分専用のメニューに取り組むので成果に繋がりやすいです！<br>
+          さらに、自分が行ったメニューや成果を記録すれば、より日々の成長を感じることができます！
+        </p>
+      </li>
+      <li class='list'>
+        <%= image_tag "Targets.png", class:"list-pict" %>
+        <h3 class='feature-list-text'>
+          目標が定まらない...
+        </h3>
+        <p class='feature-list-description'>
+          コラムに毎日更新される情報から、体づくりのために必要な情報を知ることができます。<br>
+          今やっている種目がどこを刺激して、どんな作用をするものなのかが分かるようになります！
+        </p>
+      </li>
+      <li class='list'>
+        <%= image_tag "sub_group.png", class:"list-pict" %>
+        <h3 class='feature-list-text'>
+          ひとりだと頑張れない...
+        </h3>
+        <p class='feature-list-description'>
+          同じ想いを持つ仲間を作ってお互いに励まし合うことで、ひとりではなくみんなで一つの目標に向かって頑張れます！
+        </p>
+      </li>
+    </ul>
+  </div>
+
 <div class="toppage_headline"></div>
   <div class="service_guide">
     <%= link_to column_toppages_path do %> 

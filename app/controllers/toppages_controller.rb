@@ -21,7 +21,4 @@ class ToppagesController < ApplicationController
   def administrator_info
   end
 
-  # プロテイン
-  def protein
-  end
 end

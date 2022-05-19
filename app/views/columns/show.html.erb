@@ -13,7 +13,7 @@
       <% if current_user.id == @column.user_id %>
         <%= link_to "編集", edit_column_path, method: :get, class: "item-red-btn" %>
           <p class="or-text">or</p>
-        <%= link_to "削除", "#", method: :delete, class:"item-destroy" %>
+        <%= link_to "削除", "/columns/#{@column.id}", method: :delete, class:"item-destroy" %>
       <% end %>
     <% end %>
 

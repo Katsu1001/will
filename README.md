@@ -50,6 +50,10 @@
   - 一覧表示機能
   - 削除機能
 
+  7. 種目をご案内する機能
+  - 質疑応答機能（記述ではなく、選択肢を作る予定です。）
+  - 条件分岐を利用し、質問に対する回答からその人に合った種目を選択する機能
+
 #### 今後追加予定の機能
 
 # テーブル設計
@@ -87,23 +91,22 @@
 6.お名前カナ(全角)
 7.生年月日  -->
 
-## information テーブル
-
+## Columns テーブル
 
   |  Column         |  Type     | Option    |
   |------------     |--------   |--------   |
   |name             |string     |null:false |
   |introduction     |text       |null:false |
-  |category_id      |integer    | null:false |
+  |category_id      |integer    |null:false |
+  |part_id          |integer    |null:false |
   |user             |references | null: false, foreign_key: true |
   |favorite         |references | null: false, foreign_key: true |
-  |to_do_list         |references | null: false, foreign_key: true |
+  
 
   ## Association
   - belongs_to :user
   - has many :favorites
-  - has many :information
-
+  - has many :to
 <!-- 
   ~information テーブルが持っている情報~
 1.タイトル（４０文字まで）
@@ -125,7 +128,6 @@
   
   ## Association
   - belongs_to :user
-  - has many :information
 
 <!-- 
   ~To do lists テーブルが持っている情報~
@@ -181,13 +183,35 @@
   |name            |string  |null:false |
   |user            | references | null: false, foreign_key: true |
   |information     | references | null: false, foreign_key: true |
+  |Menu            | references | null: false, foreign_key: true |
 
   ## Association
   - belongs_to :user
   - belongs_to :information
+  - belongs_to :menu
   
   <!--
   ~Favorites テーブルが持っている情報~
   1. ユーザー情報
   2. informationのタイトル
+  3. Menuからお気に入り登録された種目の情報
+  -->
+
+## Menus テーブル
+
+  |  Column        |Type    | Option    |
+  |------------    |--------|--------   |
+  |name            |string  |null:false |
+  |detail          |text    |null:false |
+  |user            | references | null: false, foreign_key: true |
+
+  ## Association
+  - belongs_to :user
+  - has many :favorite
+  
+  <!--
+  ~Favorites テーブルが持っている情報~
+  1. ユーザー情報
+  2. 種目のタイトル
+  3. 種目の詳細
   -->

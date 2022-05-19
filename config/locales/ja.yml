@@ -8,3 +8,8 @@ ja:
         family_name_katakana: 名字（カナ）
         first_name_katakana: 名前（カナ）
         birthday: 誕生日
+      column:
+        name: タイトル
+        introduction: 詳細
+        category_id: ジャンル
+        part_id: トレーニングの部位

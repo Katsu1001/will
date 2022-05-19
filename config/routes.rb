@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'columns/index'
   get 'toppages/index'
   get 'images/index'
   get 'users/index'
@@ -6,6 +7,9 @@ Rails.application.routes.draw do
 
   devise_for :users
   root to:"toppages#index"
+
+  resources :columns do
+  end
 
   resources :toppages, only: :index do
     collection do

@@ -65,7 +65,7 @@
       <%  if @column.present? %>
         <% @column.each do |column| %>
           <li class='list'>
-            <%= link_to item_path(column.id) do %>
+            <%= link_to column_path (column.id) do %>
             <div class='item-img-content' >
               <%= image_tag column.image, class: "item-img" %>
             </div>

@@ -62,8 +62,8 @@
     </div>
     <ul class='item-lists'>
 
-      <%  if @column.present? %>
-        <% @column.each do |column| %>
+      <%  if @columns.present? %>
+        <% @columns.each do |column| %>
           <li class='list'>
             <%= link_to column_path (column.id) do %>
             <div class='item-img-content' >

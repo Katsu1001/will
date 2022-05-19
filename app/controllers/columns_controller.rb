@@ -2,6 +2,7 @@ class ColumnsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
+    @columns = Column.all.order("created_at DESC")
   end
 
   def new
@@ -11,7 +12,7 @@ class ColumnsController < ApplicationController
   def create
     @column = Column.new(column_params)
    if @column.save
-      redirect_to root_path
+      redirect_to columns_index_path
     else
      render :new
    end

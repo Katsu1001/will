@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'columns/index'
   get 'toppages/index'
   get 'images/index'
   get 'users/index'

@@ -91,23 +91,22 @@
 6.お名前カナ(全角)
 7.生年月日  -->
 
-## information テーブル
-
+## Columns テーブル
 
   |  Column         |  Type     | Option    |
   |------------     |--------   |--------   |
   |name             |string     |null:false |
   |introduction     |text       |null:false |
-  |category_id      |integer    | null:false |
+  |category_id      |integer    |null:false |
+  |part_id          |integer    |null:false |
   |user             |references | null: false, foreign_key: true |
   |favorite         |references | null: false, foreign_key: true |
-  |to_do_list         |references | null: false, foreign_key: true |
+  
 
   ## Association
   - belongs_to :user
   - has many :favorites
-  - has many :information
-
+  - has many :to
 <!-- 
   ~information テーブルが持っている情報~
 1.タイトル（４０文字まで）
@@ -129,7 +128,6 @@
   
   ## Association
   - belongs_to :user
-  - has many :information
 
 <!-- 
   ~To do lists テーブルが持っている情報~

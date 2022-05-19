@@ -24,12 +24,12 @@ class User < ApplicationRecord
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
   validates_format_of :password, with: PASSWORD_REGEX
 
-  
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
   has_many :training_records, dependent: :destroy
   has_many :images, dependent: :destroy
+  has_many :columns
 
   # @user.relationships で relationshipsテーブル[:user_id]==@user.id を取ってくる。classはrelationships。
   # user_id,follow_id しか持っていない。これを次のfollowsに渡し名前などの情報を得る。

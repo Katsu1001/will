@@ -17,9 +17,14 @@ RSpec.describe Column, type: :model do
         expect(@column.errors.full_messages).to include("詳細を入力してください")
       end
       it "category_idが--だと登録できない" do
-        @column.category_id = nil
+        @column.category_id = 0
         @column.valid?
-        expect(@column.errors.full_messages).to include("ジャンルを入力してください")
+        expect(@column.errors.full_messages).to include("ジャンルは0以外の値にしてください")
+      end
+      it "part_idが--だと登録できない" do
+        @column.part_id = 0
+        @column.valid?
+        expect(@column.errors.full_messages).to include("トレーニングの部位は0以外の値にしてください")
       end
       it "ユーザー情報がないと出品できない" do
         @column.user = nil

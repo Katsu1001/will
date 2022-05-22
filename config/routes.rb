@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   root to:"toppages#index"
 
   resources :columns do
-  endc
+  end
 
   resources :toppages, only: :index do
     collection do
@@ -36,7 +36,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :exercises, only: :index
+  resources :exercises, only: :index do
+  end
 
-  resources :relationships, only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy] do
+  end
 end

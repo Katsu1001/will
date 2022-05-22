@@ -7,7 +7,7 @@ class ColumnsController < ApplicationController
     @columns = Column.all.order("created_at DESC")
   end
 
-  def newc
+  def new
     @column = Column.new
   end
 

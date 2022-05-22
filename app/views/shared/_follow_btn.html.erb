@@ -7,9 +7,11 @@
     <%= form_with model: current_user.relationships.find_by(follow_id: user.id), method: :delete do |f| %>
       <%= f.hidden_field :follow_id, value: user.id %>
       <%= f.submit "フォロー中", class: 'mt-3 follow_now_btn' %>
+    <% end%>
   <% else %>
     <%= form_with model: current_user.relationships.build do |f| %>
-    <%= f.hidden_field :follow_id, value: user.id %>
-    <%= f.submit "フォローする", class: 'mt-3 follow_now_btn' %>
+      <%= f.hidden_field :follow_id, value: user.id %>
+      <%= f.submit "フォローする", class: 'mt-3 follow_now_btn' %>
+    <% end %>
   <% end %>
 <% end %>

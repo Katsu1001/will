@@ -2,7 +2,7 @@
 <header class='top-page-header'>
   <div class='search-bar-contents'>
     <%= link_to root_path do %>
-      <%= link_to image_tag("https://i.gyazo.com/eb562d43e879e43146695908734c49a9.png", class:"will-icon"), "/" %>
+      <%= link_to image_tag("will.icon.logo.png", class:"will-icon"), "/" %>
     <% end %>
     <form class="search-form" action="#">
       <input class='input-box' placeholder='キーワードから探す'>
@@ -14,7 +14,7 @@
   <div class='nav'>
     <ul class='lists-left'>
       <% if user_signed_in? %> 
-        <li><%= link_to '検索', users_path, class: "category-list" %></li>
+        <li><%= link_to 'ユーザー検索', users_path, class: "category-list" %></li>
         <li><%= link_to '写真', user_images_path(current_user.id), class: "category-list" %></li>
         <li><%= link_to 'カレンダー', user_path(current_user.id), class: "category-list" %></li>
         <li><%= link_to '分析', user_training_records_path(current_user.id), class: "category-list" %></li>

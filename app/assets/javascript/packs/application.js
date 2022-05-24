@@ -9,6 +9,15 @@ require("@rails/activestorage").start()
 require("channels");
 require("jquery");
 require("Chart.min");
+require("../cable");
+require("../chart");
+require("../image");
+require("../modal");
+require("../mypage");
+require("../search");
+require("../user_calendar");
+
+import '@fortawesome/fontawesome-free/js/all';
 
 
 

@@ -1,2 +1,33 @@
-<h1>Images#index</h1>
-<p>Find me in app/views/images/index.html.erb</p>
+<%= render "shared/header" %>
+
+<%# 本文 %>
+<div class="row no-gutters">
+  <div class="col-lg-2 co-md-12 sidebar justify-content-center px-3 border_right padding_top">
+    <%= render partial: "shared/user_info", locals: { userbody: @userbody, user: @user } %>
+  </div>
+  <div class="col-lg-9 col-md-12 padding_bothside">
+    <p class="com">Photo</p>
+    <hr/>
+    <% if @user.id == current_user.id %>
+      <%= form_with model: @image, url: user_images_path(current_user.id,@image), method: :post, id: 'image-create' do |image| %>
+        <div class="form-group image-form">
+          <div class="image-box">
+            <ul id="image-list">
+              <%= image.label :user_image, id: 'image-list-before' do %>
+                <%= image.file_field :user_image, multiple: true, style: 'display: none;' %>
+                <div id="image-drop-box"></div>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      <% end %>
+      <hr/>
+    <% end %>
+    <%# 一単位の投稿 %>
+    <div class="padding_bothside" id="user_images_box">
+      <%= render partial: "shared/user_images" %>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/footer" %>

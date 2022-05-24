@@ -5,6 +5,7 @@ class CreateTrainingRecords < ActiveRecord::Migration[6.0]
       t.integer :exercise_id, null: false, foreign_key: true
       t.string :part,         null: false
       t.integer :date,        null: false
+      t.string :user_id
 
       t.timestamps
     end

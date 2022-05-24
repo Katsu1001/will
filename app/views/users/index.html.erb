@@ -1,2 +1,59 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<div class="row no-gutters">
+  <div class="col-lg-2 col-md-12 sidebar justify-content-center px-3 border_right padding_top">
+    <%= render partial: "shared/user_info", locals: { userbody: @userbody, user: @user } %>
+  </div>
+  <div class="col-lg-8 col-md-12 search_box">
+    <div class="kensaku">
+      <p class="margin">ユーザー検索</p>
+      <%= search_form_for @search, id: "user_search_form", url: users_path do |f| %>
+        <div class="kensaku_form_group card">
+          <div class="search_form_group">
+            <div class="kensaku_form margin_bottom_14">
+              <%= f.label :nickname_start, 'ニックネーム: '%>
+              <%= f.search_field :nickname_start %>
+            </div>
+            <div class="kensaku_body margin_bottom_14">
+              <%= f.label :user_body_height_gteq do %>
+                身長:
+              <% end %>
+              <%= f.search_field :user_body_height_gteq, class: 'input_box' %>
+              <%= f.label :user_body_height_lteq, class: '' do %>
+                〜
+              <% end %>
+              <%= f.search_field :user_body_height_lteq, class: 'input_box' %>
+            </div>
+            <div class="kensaku_body margin_bottom_14">
+              <%= f.label :user_body_weight_gteq do %>
+                体重:
+              <% end %>
+              <%= f.search_field :user_body_weight_gteq, class: 'input_box' %>
+              <%= f.label :user_body_weight_lteq do %>
+                〜
+              <% end %>
+              <%= f.search_field :user_body_weight_lteq, class: 'input_box' %>           
+            </div>
+            <div class="kensaku_experience margin_bottom_14">
+              <%= f.label :user_body_experience_lteq do %>
+                トレーニング歴:
+              <% end %>
+              <%= f.search_field :user_body_experience_lteq, class: 'input_box' %>
+              <%= f.label :user_body_experience_gteq do %>
+                年目 〜
+              <% end %>
+              <%= f.search_field :user_body_experience_gteq, class: 'input_box' %>
+              <div class="inline-block">年目</div>          
+            </div>
+            <%= button_tag type: 'submit' , class: 'margin_auto mb-3' do %>
+              <i class="fas fa-sm fa-search cursor_pointer d-inline-flex btn btn-primary"></i>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <hr/>
+    <div id="search_result">
+      <%= render partial: "shared/search_result" %>
+    </div>
+  </div>
+  <div class="col-lg-2 d-none d-lg-block d-none d-lg-block sidebar border_left"></div>
+</div>

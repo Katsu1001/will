@@ -1,64 +1,64 @@
 <div class="row no-gutters">
-  <div class="col-lg-2 col-md-12 sidebar justify-content-center px-3 border_right padding_top">
+  <div class="col-lg-2">
     <%= render partial: "shared/user_info", locals: { userbody: @userbody, user: @user } %>
   </div>
 
-  <div class="col-lg-8 col-md-12 mt-5 graph">
+  <div class="col-lg-8">
     <div class="total_weight"></div>
-    <p class="text_align_center fontsize_20">総負荷量</p>
+    <p class="text_align_center">総負荷量</p>
     <hr/>
     <%# ここで cursor_pointer 指定すれば子要素全て有効 %>
     <div class="btn-group cursor_pointer ml-2">
       <div class="form-check-inline">
         <input checked="true" class="chart_btn radio_btn" id="radio_total" name="check_part" type="radio" value="Total">
-        <label class="part_label form-check-label btn btn-primary sp_size" for="radio_total">total</label>
+        <label class="part_label" for="radio_total">total</label>
       </div>
       <div class="form-check-inline">
         <input class="chart_btn radio_btn" id="radio_chest" name="check_part" type="radio" value="胸">
-        <label class="part_label form-check-label btn btn-primary sp_size" for="radio_chest">胸</label>
+        <label class="part_label" for="radio_chest">胸</label>
       </div>
       <div class="form-check-inline">
         <input class="chart_btn radio_btn" id="radio_chest" name="check_part" type="radio" value="背中">
-        <label class="part_label form-check-label btn btn-primary sp_size" for="radio_chest">背中</label>
+        <label class="part_label" for="radio_chest">背中</label>
       </div>
       <div class="form-check-inline">
         <input class="chart_btn radio_btn" id="radio_chest" name="check_part" type="radio" value="肩">
-        <label class="part_label form-check-label btn btn-primary sp_size" for="radio_chest">肩</label>
+        <label class="part_labele" for="radio_chest">肩</label>
       </div>
       <div class="form-check-inline">
         <input class="chart_btn radio_btn" id="radio_chest" name="check_part" type="radio" value="腕">
-        <label class="part_label form-check-label btn btn-primary sp_size" for="radio_chest">腕</label>
+        <label class="part_label" for="radio_chest">腕</label>
       </div>
       <div class="form-check-inline">
         <input class="chart_btn radio_btn" id="radio_chest" name="check_part" type="radio" value="前腕">
-        <label class="part_label form-check-label btn btn-primary sp_size" for="radio_chest">前腕</label>
+        <label class="part_label" for="radio_chest">前腕</label>
       </div>
       <div class="form-check-inline">
         <input class="chart_btn radio_btn" id="radio_chest" name="check_part" type="radio" value="お腹">
-        <label class="part_label form-check-label btn btn-primary sp_size" for="radio_chest">お腹</label>
+        <label class="part_label" for="radio_chest">お腹</label>
       </div>
       <div class="form-check-inline">
         <input class="chart_btn radio_btn" id="radio_chest" name="check_part" type="radio" value="脚">
-        <label class="part_label form-check-label btn btn-primary sp_size" for="radio_chest">脚</label>
+        <label class="part_label" for="radio_chest">脚</label>
       </div>
       <div class="form-check-inline">
         <input class="chart_btn radio_btn" id="radio_chest" name="check_part" type="radio" value="脹脛">
-        <label class="part_label form-check-label btn btn-primary sp_size" for="radio_chest">脹脛</label>
+        <label class="part_label" for="radio_chest">脹脛</label>
       </div>
       <div class="form-check-inline">
         <input class="chart_btn radio_btn" id="radio_chest" name="check_part" type="radio" value="有酸素">
-        <label class="part_label form-check-label btn btn-primary sp_size" for="radio_chest">有酸素</label>
+        <label class="part_label" for="radio_chest">有酸素</label>
       </div>
     </div>
 
     <div class="btn-group ml-2">
       <div class="form-check-inline">
-        <input checked="true" class="chart_btn radio_btn form-check-input chart_btn mr-2 cursor_pointer" id="check_month" name="unit" type="radio" value="month"></input>
-        <label class="unit_label form-check-label btn btn-secondary sp_size" for="check_month">月</label>
+        <input checked="true" class="chart_btn radio_btn" id="check_month" name="unit" type="radio" value="month">
+        <label class="unit_label" for="check_month">月</label>
       </div>
       <div class="form-check-inline">
-        <input checked="true" class="chart_btn radio_btn form-check-input chart_btn mr-2 cursor_pointer" id="check_month" name="unit" type="radio" value="month"></input>
-        <label class="unit_label form-check-label btn btn-secondary sp_size" for="check_month">週</label>
+        <input checked="true" class="chart_btn radio_btn" id="check_month" name="unit" type="radio" value="month">
+        <label class="unit_label" for="check_month">週</label>
       </div>
     </div>
     <hr/>
@@ -66,5 +66,5 @@
     <canvas class="chart" id="myChart"></canvas>
 
   </div>
-  <div class="col-lg-2 d-none d-lg-block sidebar border_left"></div>
+  <div class="col-lg-2"></div>
 </div>

@@ -95,6 +95,7 @@ ActiveRecord::Schema.define(version: 2022_05_20_164921) do
     t.integer "exercise_id", null: false
     t.string "part", null: false
     t.integer "date", null: false
+    t.string "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -105,6 +106,7 @@ ActiveRecord::Schema.define(version: 2022_05_20_164921) do
     t.integer "height"
     t.string "gender"
     t.integer "birth_year"
+    t.string "avatar"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_user_bodies_on_user_id"
@@ -119,6 +121,7 @@ ActiveRecord::Schema.define(version: 2022_05_20_164921) do
     t.string "family_name_katakana", null: false
     t.string "first_name_katakana", null: false
     t.date "birthday", null: false
+    t.string "avatar"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

@@ -16,6 +16,7 @@
       <% if user_signed_in? %> 
         <li><%= link_to 'ユーザー検索', users_path, class: "category-list" %></li>
         <li><%= link_to '写真', user_images_path(current_user.id), class: "category-list" %></li>
+        <li><%= link_to '目標設定', todo_lists_path, class: "category-list" %></li>
         <li><%= link_to 'カレンダー', user_path(current_user.id), class: "category-list" %></li>
         <li><%= link_to '分析', user_training_records_path(current_user.id), class: "category-list" %></li>
         <li><%= link_to 'コラム', columns_index_path, class: "category-list" %></li>

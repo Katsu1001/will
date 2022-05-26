@@ -1,0 +1,42 @@
+<div class="card-header d-flex justify-content-between">
+  <h5 class="md-0 text-dark">
+   Listagem To Do
+  </h5>
+  <%= link_to '新着順', new_todo_list_path, class: 'btn btn-primary btn-sm' %>
+</div>
+<div class="card-body ">
+<div class="m-1">  
+    <%= form_for :todo_list do |f| %>
+      <div class="input-group mb-4">
+        <%= f.text_field :titulo, class: 'form-control', placeholder: 'タイトル名一覧' %>
+        <div class="input-group-append">
+          <%= f.submit "保存する", class: "btn btn-primary input-group-btn" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="row m-1">
+    <% @todo_lists.order(:created_at).each do |todo_list| %>
+      <div class="col-10" style='border:1px solid #f5f5f5; padding:20px 5px 20px 5px'>
+        <%= link_to todo_list, class: "text-decoration-none" do %>      
+          <h6 class='m-0 text-dark'>
+            <b>
+              <%= todo_list.titulo %>
+            </b>
+            <span class="badge badge-<%= todo_list.badge_color %>">
+                <%= todo_list.status %>
+            </span>
+          </h6>
+          <p class='text-secondary m-0'>
+            <small>
+              <%= todo_list.percent_complete %>% 完了 (<%= todo_list.completed_items %>/<%= todo_list.total_items %>) 全ての項目
+            </small>
+          </p>
+        <% end %>
+      </div>
+      <div class="col-2" align="center"  style='border:1px solid #f5f5f5; padding:20px 1px 20px 1px'>
+        <%= link_to "<button class='btn btn-danger'><i class='fa fa-trash'></i></button>".html_safe, { action: :destroy, id: todo_list.id }, method: :delete, data: { confirm: '本当に削除しますか？'} %>
+      </div> 
+    <% end %>
+  </div>
+</div>

@@ -6,19 +6,34 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <link href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" type="text/javascript"></script>
+    <script src="https://kit.fontawesome.com/2ec2a30cc1.js" crossorigin="anonymous"></script> 
   </head>
 
-  <body class="h-100 d-flex flex-column" style="min-height: 100vh">
-    <div class="head_blank"></div>
-      <%= render 'layouts/notifications' %>
-      <%= render partial: "shared/modal" %>
+  <body>
+    <div class="h-100 d-flex flex-column" style="min-height">
+      <div class="head_blank">
+        <%= render 'layouts/notifications' %>
+        <%= render partial: "shared/modal" %>
+      </div>
     </div>
-    
-    <%= yield %>
-    
+    <div class='bg-light'>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 col-lg-8 offset-md-1 offset-lg-2">
+            <% unless notice.nil? %>
+              <div id="notice" class="alert alert-success" role="alert">
+                <%= notice %>
+              </div>
+            <% end %>
+            <div class="card mt-5"> 
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
   </body>
 </html>
 

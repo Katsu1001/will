@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'todo_lists/index'
+  get 'todo_items/index'
   get 'columns/index'
   get 'toppages/index'
   get 'images/index'
@@ -8,9 +10,6 @@ Rails.application.routes.draw do
   devise_for :users
   root to:"toppages#index"
 
-  resources :columns do
-  end
-
   resources :toppages, only: :index do
     collection do
       get 'privacy_policy'
@@ -18,6 +17,13 @@ Rails.application.routes.draw do
       get 'contact_us'
       get 'administrator_info'
     end
+  end
+
+  resources :columns do
+  end
+
+  resources :todo_lists do
+    resources :todo_items
   end
 
   resources :users, only: [:index, :show] do

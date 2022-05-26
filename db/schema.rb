@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_20_164921) do
+ActiveRecord::Schema.define(version: 2022_05_25_035006) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -90,6 +90,24 @@ ActiveRecord::Schema.define(version: 2022_05_20_164921) do
     t.index ["user_id"], name: "index_relationships_on_user_id"
   end
 
+  create_table "todo_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "descricao"
+    t.boolean "completo"
+    t.datetime "completo_em"
+    t.bigint "todo_list_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["todo_list_id"], name: "index_todo_items_on_todo_list_id"
+  end
+
+  create_table "todo_lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "titulo"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_todo_lists_on_user_id"
+  end
+
   create_table "training_records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "menu_id", null: false
     t.integer "exercise_id", null: false
@@ -138,5 +156,7 @@ ActiveRecord::Schema.define(version: 2022_05_20_164921) do
   add_foreign_key "menus", "training_records"
   add_foreign_key "relationships", "users"
   add_foreign_key "relationships", "users", column: "follow_id"
+  add_foreign_key "todo_items", "todo_lists"
+  add_foreign_key "todo_lists", "users"
   add_foreign_key "user_bodies", "users"
 end

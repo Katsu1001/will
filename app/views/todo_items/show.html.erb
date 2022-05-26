@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>概要:</b>
+  <%= @todo_item.descricao %>
+</p>
+
+<p>
+  <b>完了:</b>
+  <%= @todo_item.completo %>
+</p>
+
+<p>
+  <b>完了する:</b>
+  <%= @todo_item.completo_em %>
+</p>
+
+<p>
+  <b>Todo list:</b>
+  <%= @todo_item.todo_list %>
+</p>
+
+
+<%= link_to '編集する', edit_todo_list_todo_item_path(@todo_item.todo_list, @todo_item) %> |
+<%= link_to '戻る', todo_list_todo_items_path(@todo_item.todo_list) %>

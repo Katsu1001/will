@@ -1,0 +1,9 @@
+<div class="card-header d-flex justify-content-between">
+  <h5 class="md-0 text-dark">
+    編集する項目
+  </h5>
+  <%= link_to 'Voltar', @todo_list, class: "btn btn-dark" %> 
+</div>
+
+<%= render 'form', todo_list: @todo_list %>
+

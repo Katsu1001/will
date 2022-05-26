@@ -1,0 +1,6 @@
+<h1>項目を編集する</h1>
+
+<%= render 'form' %>
+
+<%= link_to '詳細', [@todo_item.todo_list, @todo_item] %> |
+<%= link_to '戻る', todo_list_todo_items_path(@todo_item.todo_list) %>

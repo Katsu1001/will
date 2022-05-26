@@ -1,0 +1,83 @@
+<div class="card-header">
+  <div class="row">
+    <div class="col-1">
+    <%= link_to todo_lists_path, class: "btn btn-dark" do %>
+      <i class="fa fa-angle-left"></i>
+    <% end %>
+    </div>
+      <div class="col-11">
+        <div class="d-flex justify-content-between">
+          <div>
+            <h6 class='m-0'>
+              <b><%= @todo_list.titulo %></b>
+              <span class="badge badge-<%= @todo_list.badge_color %>"><%= @todo_list.status %></span>
+            </h6>
+            <p class='text-secondary m-0'><small><%= @todo_list.percent_complete %>% Completo (<%= @todo_list.completed_items %>/<%= @todo_list.total_items %>)全ての項目</small></p>
+          </div>
+          <div>
+            <%= link_to '編集する', edit_todo_list_path(@todo_list), class: 'btn btn-secondary' %>
+          </div>
+          </div>  
+        </div>
+      </div>
+  </div>
+  <div class='card-body'>
+    <div class="progress mb-4">
+      <div class="progress-bar bg-success" role="progressbar" style="width:<%= @todo_list.percent_complete %>%" aria-valuenow="<%= @todo_list.percent_complete %>" aria-valuemin="0" aria-valuemax="100">
+      </div>
+    </div>
+    <%= form_for([@todo_list, @todo_item]) do |f| %>
+      <div class="input-group mb-4">
+        <%= f.text_field :descricao, class: 'form-control', placeholder: '項目追加' %>
+        <div class="input-group-append">
+          <%= f.submit "追加する", class: "btn btn-primary input-group-btn" %>
+        </div>
+      </div>
+    <% end %>
+    <div class="row m-0">
+      <% @todo_list.todo_items.order(:completo).each do |todo_item| %>
+        <% if todo_item.completo? %>
+          <div class=" col-12 p-2 border bg-light">
+            <div class="row">
+              <div class="col-9">
+                <span class='text-secondary'>
+                  <em><s>
+                    <%= todo_item.descricao %>  
+                  </em></s>
+                </span>
+              </div>
+              <div class="col-3" align="right">          
+               
+                <%= link_to '#', class: 'btn btn-success', data: {reflex: "click->TodoItem#marcar_incompleto", id: todo_item.id } do %>
+                <i class="fa fa-check"></i>
+                 <% end %>
+
+                <%= link_to "<button class='btn btn-danger'><i class='fa fa-trash'></i></button>".html_safe, [todo_item.todo_list, todo_item],method: :delete, data: { confirm: '本当に削除しますか？' } %>
+              </div>
+            </div>  
+          </div>
+        <% else %>
+          <div class=" col-12 p-2 border bg-light">
+            <div class="row">
+              <div class="col-9">
+                <span class='text-muted'>
+                  <b>
+                    <%= todo_item.descricao %>  
+                  </b>
+                </span>
+              </div>
+              <div class="col-3" align="right">          
+                
+              <%= link_to '#', class: 'btn btn-secondary', data: {reflex: "click->TodoItem#marcar_completo", id: todo_item.id } do %>
+              <i class="fa fa-check"></i>
+              <% end %>
+
+                <%= link_to "<button class='btn btn-danger'><i class='fa fa-trash'></i></button>".html_safe, [todo_item.todo_list, todo_item],method: :delete, data: { confirm: '本当に削除しますか？' } %>
+              </div>
+            </div>  
+          </div>
+        <% end %>  
+      <% end %>
+    </div> 
+  </div>
+</div> 

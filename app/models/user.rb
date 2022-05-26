@@ -30,6 +30,8 @@ class User < ApplicationRecord
   has_many :training_records, dependent: :destroy
   has_many :images, dependent: :destroy
   has_many :columns
+  has_many :todo_lists
+  has_many :todo_items
 
   # @user.relationships で relationshipsテーブル[:user_id]==@user.id を取ってくる。classはrelationships。
   # user_id,follow_id しか持っていない。これを次のfollowsに渡し名前などの情報を得る。

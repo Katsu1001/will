@@ -14,6 +14,16 @@ module Will
     # 日本語の言語設定
     config.i18n.default_locale = :ja
 
+    config.assets.initialize_on_precompile = false
+
+    config.time_zone = 'Asia/Tokyo'
+    config.autoload_paths += Dir[Rails.root.join('app', 'uploaders')]
+
+    config.generators do |g|
+      g.assets     false
+      g.helper     false
+    end
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading

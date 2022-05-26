@@ -380,7 +380,6 @@ DEPENDENCIES
   ransack
   rspec-rails (~> 4.0.0)
   sass-rails (~> 5)
-  sassc
   selenium-webdriver
   simple_calendar
   spring
